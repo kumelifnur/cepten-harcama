@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#f7f5f0">
+  <title>Cepten — harcama günlüğü</title><link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <aside class="side"><a class="brand" href="#">cepten<span> /</span></a><div class="side-note">Kişisel bütçeni<br>kolayca takip et.</div><div class="side-bottom"><span class="avatar">₺</span><div><b>Benim bütçem</b><small>Bu cihazda saklanır</small></div></div></aside>
+    <section class="content">
+      <header><div><p class="eyebrow">KİŞİSEL FİNANS</p><h1>Harcama günlüğün</h1></div><label class="month-label">Ay <input id="monthPicker" type="month" aria-label="Ay seç"></label></header>
+      <section class="summary"><article class="balance"><span>Bu ay toplam harcama</span><strong id="total">₺0</strong><small><i></i> Seçili ayın kayıtları</small><div class="decor">₺</div></article><article class="mini"><span>Kayıt sayısı</span><strong id="count">0</strong><small>harcama</small></article><article class="mini"><span>En çok harcanan</span><strong id="topCategory">—</strong><small id="topAmount">henüz kayıt yok</small></article></section>
+      <section class="panel"><div class="panel-head"><div><h2>Yeni harcama</h2><p>Bir harcama ekleyerek başla.</p></div></div><form id="expenseForm"><label>Açıklama<input name="description" maxlength="60" placeholder="Örn. Market alışverişi" required></label><label>Tutar<input name="amount" type="number" min="0.01" step="0.01" placeholder="0,00" required></label><label>Kategori<select name="category"><option>Market</option><option>Ulaşım</option><option>Yemek</option><option>Eğlence</option><option>Fatura</option><option>Diğer</option></select></label><label>Tarih<input name="date" type="date" required></label><button class="submit">Kaydet <span>↗</span></button></form></section>
+      <section class="panel list-panel"><div class="list-head"><div><h2>Hareketler</h2><p id="listSubtitle">Seçili aya ait harcamalar</p></div><select id="categoryFilter" aria-label="Kategoriye göre filtrele"><option value="all">Tüm kategoriler</option><option>Market</option><option>Ulaşım</option><option>Yemek</option><option>Eğlence</option><option>Fatura</option><option>Diğer</option></select></div><div class="table-wrap"><table><thead><tr><th>AÇIKLAMA</th><th>KATEGORİ</th><th>TARİH</th><th class="amount-col">TUTAR</th><th></th></tr></thead><tbody id="expenseRows"></tbody></table></div><div id="empty" class="empty">Henüz harcama yok. İlk kaydını yukarıdan ekleyebilirsin.</div></section>
+      <footer>Cepten · Basit bir harcama günlüğü</footer>
+    </section>
+  </main><script src="app.js"></script>
+</body>
+</html>
